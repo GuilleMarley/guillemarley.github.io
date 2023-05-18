@@ -127,3 +127,44 @@ header nav a.activo {
 		max-width: 100%;
 	}
 }
+
+.contenedor-anuncios {
+	display: flex;
+	justify-content: space-between;
+}
+
+.foto-anuncio {
+	width: 750px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.boton-anuncio {
+	width: 100%;
+	height: 100%;
+	background-image: url('/img/apruebanos.png');
+	background-size: cover;
+	background-position: center;
+	border: none;
+	cursor: pointer;
+}
+
+.foto-anuncio-unicef {
+	width: 750px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.boton-anuncio-unicef {
+	width: 100%;
+	height: 100%;
+	background-image: url('/img/unicef.png');
+	background-size: cover;
+	background-position: center;
+	border: none;
+	cursor: pointer;
+}
