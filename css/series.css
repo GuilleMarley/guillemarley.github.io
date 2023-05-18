@@ -54,7 +54,7 @@ header nav a.activo {
 /* ---- ----- ----- Button long videos ----- ----- ---- */
 p {
 	padding: 0;
-	margin-top: 5%;
+	margin-top: 0.5%;
 	text-align: center;
 	font-family: 'Gloock', serif;
 	color: var(--button);
@@ -74,14 +74,41 @@ p#neko-titulo {
 	font-size: 32px;
 }
 
+/*botones automaticos*/
+
 .buttons-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	margin-top: 5%;
+	margin-top: 0%;
 	margin-bottom: 5%;
 	margin-left: 25%;
 	margin-right: 25%;
+}
+
+.series-button {
+	background-color: var(--button);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	width: auto;
+	height: auto;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.series-button:hover {
+	box-shadow: 0 10px 30px rgba(0, 149, 255);
+	transform: scale(.95);
+}
+
+.series-button .series-image {
+	width: 100px;
+	/* Ajusta el tamaño deseado */
+	height: 180px;
+	/* Ajusta el tamaño deseado */
+	object-fit: contain;
+	margin-right: 10px;
 }
 
 .auto-button {
@@ -100,41 +127,35 @@ p#neko-titulo {
 	transform: scale(.95);
 }
 
-.auto-button .episode-image {
-	width: 80px;
-	height: 150px;
-	object-fit: contain;
-	margin-right: 10px;
-}
-
 .auto-button span {
 	flex: 1;
 }
 
-.series-button {
+.auto-button-serie {
 	background-color: var(--button);
 	color: #fff;
 	display: flex;
 	align-items: center;
-	width: auto;
+	width: 100%;
 	height: auto;
-	/* Ajusta la altura deseada */
 	margin-bottom: 10px;
 	padding: 10px;
 }
 
-.series-button:hover {
+.auto-button-serie:hover {
 	box-shadow: 0 10px 30px rgba(0, 149, 255);
 	transform: scale(.95);
 }
 
-.series-button .series-image {
-	width: 100px;
-	/* Ajusta el tamaño deseado */
-	height: 180px;
-	/* Ajusta el tamaño deseado */
+.auto-button-serie .episode-image {
+	width: auto;
+	height: 80px;
 	object-fit: contain;
 	margin-right: 10px;
+}
+
+.auto-button-serie span {
+	flex: 1;
 }
 
 .back-button {
