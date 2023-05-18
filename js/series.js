@@ -72,10 +72,14 @@ function createEpisodeButtons(episodes) {
   videoContainer.classList.add("video-container");
   container.appendChild(videoContainer);
 
+  var buttonsScrollContainer = document.createElement("div");
+  buttonsScrollContainer.classList.add("buttons-scroll-container");
+  container.appendChild(buttonsScrollContainer);
+
   episodes.forEach(function (episode) {
     var episodeButton = document.createElement("button");
     episodeButton.textContent = episode.name;
-    episodeButton.classList.add("auto-button");
+    episodeButton.classList.add("auto-button-serie");
 
     var episodeImage = document.createElement("img");
     episodeImage.src = episode.pic;
@@ -92,8 +96,12 @@ function createEpisodeButtons(episodes) {
       videoContainer.appendChild(videoIframe);
     });
 
-    container.appendChild(episodeButton);
+    buttonsScrollContainer.appendChild(episodeButton);
   });
+
+  // Habilitar el scroll único para los botones de episodios
+  buttonsScrollContainer.style.maxHeight = "500px";
+  buttonsScrollContainer.style.overflowY = "scroll";
 }
 
 fetchSeriesButtons();
