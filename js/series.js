@@ -68,49 +68,30 @@ function createEpisodeButtons(episodes) {
     fetchSeriesButtons(); // Vuelve a cargar los botones principales
   });
 
+  var videoContainer = document.createElement("div");
+  videoContainer.classList.add("video-container");
+  container.appendChild(videoContainer);
+
   episodes.forEach(function (episode) {
     var episodeButton = document.createElement("button");
     episodeButton.textContent = episode.name;
     episodeButton.classList.add("auto-button");
-    episodeButton.addEventListener("click", function () {
-      var videoContainer = document.createElement("div");
-      videoContainer.classList.add("video-container");
-
-      var backButtonVideo = document.createElement("button");
-      backButtonVideo.textContent = "Volver";
-      backButtonVideo.classList.add("back-button");
-      videoContainer.appendChild(backButtonVideo);
-
-      backButtonVideo.addEventListener("click", function () {
-        container.innerHTML = ""; // Elimina el video actual
-        fetchSeriesButtons(); // Vuelve a cargar los botones principales
-      });
-
-      var backButtonInVideo = document.createElement("button");
-      backButtonInVideo.textContent = "Volver";
-      backButtonInVideo.classList.add("back1-button");
-      videoContainer.appendChild(backButtonInVideo);
-
-      backButtonInVideo.addEventListener("click", function () {
-        container.innerHTML = ""; // Elimina el video actual
-        fetchSeriesButtons(); // Vuelve a cargar los botones principales
-      });
-
-      var videoIframe = document.createElement("iframe");
-      videoIframe.src = episode.link;
-      videoIframe.allowFullscreen = true;
-      videoContainer.appendChild(videoIframe);
-
-      // Reemplazar los botones por el video
-      container.innerHTML = "";
-      container.appendChild(videoContainer);
-    });
 
     var episodeImage = document.createElement("img");
     episodeImage.src = episode.pic;
     episodeImage.classList.add("episode-image");
-
     episodeButton.appendChild(episodeImage);
+
+    episodeButton.addEventListener("click", function () {
+      var videoIframe = document.createElement("iframe");
+      videoIframe.src = episode.link;
+      videoIframe.allowFullscreen = true;
+
+      // Reemplazar el video actual por el nuevo
+      videoContainer.innerHTML = "";
+      videoContainer.appendChild(videoIframe);
+    });
+
     container.appendChild(episodeButton);
   });
 }
